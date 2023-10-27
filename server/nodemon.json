@@ -1,0 +1,8 @@
+{
+    "watch": ["src"],
+    "ext": "js, jsx, ts, tsx, json, css",
+    "exec": "ts-node ./src/app.ts",
+    "execMap": {
+      "ts": "node --require ts-node/register"
+    }
+  }

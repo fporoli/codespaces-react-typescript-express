@@ -1,0 +1,330 @@
+{
+    "client": "Thunder Client",
+    "collectionName": "RestTest",
+    "dateExported": "2023-10-27T03:23:04.202Z",
+    "version": "1.1",
+    "folders": [],
+    "requests": [
+        {
+            "_id": "d4708a5c-7335-4e1c-adca-407ef4b9fdb2",
+            "colId": "230398d5-09f6-474c-ab5f-e4b9fdc536d4",
+            "containerId": "",
+            "name": "Reset Start",
+            "url": "http://localhost:3000/expenses/",
+            "method": "PATCH",
+            "sortNum": 5000,
+            "created": "2023-10-27T02:41:48.462Z",
+            "modified": "2023-10-27T02:41:48.462Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "40e2dd17-d948-485b-8c5d-2bbd5c9d17c7",
+            "colId": "230398d5-09f6-474c-ab5f-e4b9fdc536d4",
+            "containerId": "",
+            "name": "Get All",
+            "url": "http://localhost:3000/expenses",
+            "method": "GET",
+            "sortNum": 10000,
+            "created": "2023-10-26T21:49:26.731Z",
+            "modified": "2023-10-27T03:19:40.106Z",
+            "headers": [],
+            "params": [],
+            "tests": [
+                {
+                    "type": "res-code",
+                    "custom": "",
+                    "action": "equal",
+                    "value": "200"
+                },
+                {
+                    "type": "json-query",
+                    "custom": "json[0].id",
+                    "action": "equal",
+                    "value": "21"
+                },
+                {
+                    "type": "json-query",
+                    "custom": "json",
+                    "action": "count",
+                    "value": "4"
+                }
+            ]
+        },
+        {
+            "_id": "389297e2-570f-4327-8324-386afb391360",
+            "colId": "230398d5-09f6-474c-ab5f-e4b9fdc536d4",
+            "containerId": "",
+            "name": "Remove 32",
+            "url": "http://localhost:3000/expenses/32",
+            "method": "DELETE",
+            "sortNum": 20000,
+            "created": "2023-10-26T21:49:39.143Z",
+            "modified": "2023-10-27T02:59:20.047Z",
+            "headers": [],
+            "params": [],
+            "tests": [
+                {
+                    "type": "res-code",
+                    "custom": "",
+                    "action": "equal",
+                    "value": "204"
+                }
+            ]
+        },
+        {
+            "_id": "d35357da-898d-4ce0-9b9b-0755f68633ee",
+            "colId": "230398d5-09f6-474c-ab5f-e4b9fdc536d4",
+            "containerId": "",
+            "name": "Get All -32",
+            "url": "http://localhost:3000/expenses",
+            "method": "GET",
+            "sortNum": 25000,
+            "created": "2023-10-26T21:50:14.550Z",
+            "modified": "2023-10-27T03:01:41.059Z",
+            "headers": [],
+            "params": [],
+            "tests": [
+                {
+                    "type": "res-code",
+                    "custom": "",
+                    "action": "equal",
+                    "value": "200"
+                },
+                {
+                    "type": "json-query",
+                    "custom": "json[2].id",
+                    "action": "equal",
+                    "value": "54"
+                },
+                {
+                    "type": "json-query",
+                    "custom": "json",
+                    "action": "count",
+                    "value": "3"
+                }
+            ]
+        },
+        {
+            "_id": "61cf957a-0f88-425c-8972-7c99fc44d97b",
+            "colId": "230398d5-09f6-474c-ab5f-e4b9fdc536d4",
+            "containerId": "",
+            "name": "Reset",
+            "url": "http://localhost:3000/expenses/",
+            "method": "PATCH",
+            "sortNum": 30000,
+            "created": "2023-10-26T21:49:47.880Z",
+            "modified": "2023-10-27T03:03:09.790Z",
+            "headers": [],
+            "params": [],
+            "tests": [
+                {
+                    "type": "res-code",
+                    "custom": "",
+                    "action": "equal",
+                    "value": "200"
+                }
+            ]
+        },
+        {
+            "_id": "1a4d26c1-1322-48e7-9fcd-f2b645ec929f",
+            "colId": "230398d5-09f6-474c-ab5f-e4b9fdc536d4",
+            "containerId": "",
+            "name": "Get All",
+            "url": "http://localhost:3000/expenses",
+            "method": "GET",
+            "sortNum": 40000,
+            "created": "2023-10-26T21:50:03.968Z",
+            "modified": "2023-10-27T03:02:56.494Z",
+            "headers": [],
+            "params": [],
+            "tests": [
+                {
+                    "type": "res-code",
+                    "custom": "",
+                    "action": "equal",
+                    "value": "200"
+                },
+                {
+                    "type": "json-query",
+                    "custom": "json",
+                    "action": "count",
+                    "value": "4"
+                }
+            ]
+        },
+        {
+            "_id": "2d984fd5-02bb-4d2a-af50-d0601a7127a3",
+            "colId": "230398d5-09f6-474c-ab5f-e4b9fdc536d4",
+            "containerId": "",
+            "name": "Create new",
+            "url": "http://localhost:3000/expenses",
+            "method": "POST",
+            "sortNum": 50000,
+            "created": "2023-10-26T21:52:48.321Z",
+            "modified": "2023-10-27T03:05:52.064Z",
+            "headers": [],
+            "params": [],
+            "tests": [
+                {
+                    "type": "res-code",
+                    "custom": "",
+                    "action": "equal",
+                    "value": "201"
+                },
+                {
+                    "type": "json-query",
+                    "custom": "json.id",
+                    "action": ">=",
+                    "value": "55"
+                }
+            ]
+        },
+        {
+            "_id": "60976367-c112-4ce5-ad1b-e7de9812686f",
+            "colId": "230398d5-09f6-474c-ab5f-e4b9fdc536d4",
+            "containerId": "",
+            "name": "Get All -5",
+            "url": "http://localhost:3000/expenses",
+            "method": "GET",
+            "sortNum": 55000,
+            "created": "2023-10-27T03:06:12.503Z",
+            "modified": "2023-10-27T03:08:03.940Z",
+            "headers": [],
+            "params": [],
+            "tests": [
+                {
+                    "type": "res-code",
+                    "custom": "",
+                    "action": "equal",
+                    "value": "200"
+                },
+                {
+                    "type": "json-query",
+                    "custom": "json[2].id",
+                    "action": "equal",
+                    "value": "43"
+                },
+                {
+                    "type": "json-query",
+                    "custom": "json",
+                    "action": "count",
+                    "value": "5"
+                }
+            ]
+        },
+        {
+            "_id": "e61a6b1e-84ff-47d4-9d9a-191a4a779859",
+            "colId": "230398d5-09f6-474c-ab5f-e4b9fdc536d4",
+            "containerId": "",
+            "name": "Update (55 -> 53)",
+            "url": "http://localhost:3000/expenses/55",
+            "method": "PUT",
+            "sortNum": 70000,
+            "created": "2023-10-26T21:56:27.552Z",
+            "modified": "2023-10-27T03:09:18.667Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\"id\":53,\"description\":\"Test Insert Data XXX111V2\",\"amount\":345.67,\"categoryid\":22}",
+                "form": []
+            },
+            "tests": [
+                {
+                    "type": "res-code",
+                    "custom": "",
+                    "action": "equal",
+                    "value": "200"
+                },
+                {
+                    "type": "json-query",
+                    "custom": "json.id",
+                    "action": "equal",
+                    "value": "53"
+                }
+            ]
+        },
+        {
+            "_id": "b553990a-d701-4eae-bae4-1d1d2e266c8c",
+            "colId": "230398d5-09f6-474c-ab5f-e4b9fdc536d4",
+            "containerId": "",
+            "name": "Get All",
+            "url": "http://localhost:3000/expenses",
+            "method": "GET",
+            "sortNum": 80000,
+            "created": "2023-10-26T22:03:55.817Z",
+            "modified": "2023-10-27T03:11:15.916Z",
+            "headers": [],
+            "params": [],
+            "tests": [
+                {
+                    "type": "res-code",
+                    "custom": "",
+                    "action": "equal",
+                    "value": "200"
+                },
+                {
+                    "type": "json-query",
+                    "custom": "json[4].id",
+                    "action": "equal",
+                    "value": "53"
+                }
+            ]
+        },
+        {
+            "_id": "1475f91c-e5e6-4346-ba2f-d5c50d49fd14",
+            "colId": "230398d5-09f6-474c-ab5f-e4b9fdc536d4",
+            "containerId": "",
+            "name": "Create new",
+            "url": "http://localhost:3000/expenses",
+            "method": "POST",
+            "sortNum": 90000,
+            "created": "2023-10-26T22:04:13.494Z",
+            "modified": "2023-10-27T03:21:55.167Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\"id\":0,\"description\":\"Test Insert Data XXX111\",\"amount\":123.45,\"categoryid\":33}",
+                "form": []
+            },
+            "tests": [
+                {
+                    "type": "res-code",
+                    "custom": "",
+                    "action": "equal",
+                    "value": "201"
+                }
+            ]
+        },
+        {
+            "_id": "8c3b8c44-6e15-4b29-8349-2d8b36b0c84d",
+            "colId": "230398d5-09f6-474c-ab5f-e4b9fdc536d4",
+            "containerId": "",
+            "name": "Get All",
+            "url": "http://localhost:3000/expenses",
+            "method": "GET",
+            "sortNum": 100000,
+            "created": "2023-10-26T22:13:28.368Z",
+            "modified": "2023-10-27T03:12:34.727Z",
+            "headers": [],
+            "params": [],
+            "tests": [
+                {
+                    "type": "res-code",
+                    "custom": "",
+                    "action": "equal",
+                    "value": "200"
+                },
+                {
+                    "type": "json-query",
+                    "custom": "json",
+                    "action": "count",
+                    "value": "6"
+                }
+            ]
+        }
+    ]
+}
