@@ -17,9 +17,7 @@ const expenseDataStore_1 = require("../models/expenseDataStore");
 const expRouter = express_1.default.Router();
 expRouter.get("/", (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     try {
-        setTimeout(function () {
-            res.status(200).send((0, expenseDataStore_1.getExpenses)());
-        }, 1000);
+        res.status(200).send((0, expenseDataStore_1.getExpenses)());
     }
     catch (e) {
         res.status(500).send({ message: "500-Internal Server Error: " + e });

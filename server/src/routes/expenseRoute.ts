@@ -1,14 +1,19 @@
 import express, { Request, Response } from "express";
-import { getExpenses, create, remove, reset, update, find } from '../models/expenseDataStore'
+import {
+  getExpenses,
+  create,
+  remove,
+  reset,
+  update,
+  find,
+} from "../models/expenseDataStore";
 import Expense from "../models/expense";
 
 const expRouter = express.Router();
 
 expRouter.get("/", async (req: Request, res: Response) => {
   try {
-    setTimeout(function () {
-      res.status(200).send(getExpenses());
-    }, 1000);
+    res.status(200).send(getExpenses());
   } catch (e) {
     res.status(500).send({ message: "500-Internal Server Error: " + e });
   }

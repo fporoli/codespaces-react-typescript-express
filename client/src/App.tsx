@@ -9,7 +9,7 @@ import ExpenseForm from "./components/ExpenseForm";
 import { useExpenses } from "./hooks/useExpenses";
 
 function App() {
-  const { expenses, setExpenses, setError, isLoading, setIsLoading } =
+  const { expenses, setExpenses, setError, isLoading } =
     useExpenses();
 
   const [catFilter, setCatFilter] = useState<number>(-1);
@@ -17,14 +17,11 @@ function App() {
 
   function refresh() {
     handleReset();
-    setIsLoading(true);
     ExpenseService.getAll<Expense>()
       .request.then((exp) => {
-        setIsLoading(false);
         setExpenses(exp.data);
       })
       .catch((e) => {
-        setIsLoading(false);
         setError(e);
       });
   }

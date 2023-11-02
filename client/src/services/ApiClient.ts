@@ -1,7 +1,7 @@
 import axios, { CanceledError } from "axios";
 
 // Set default configuration
-axios.defaults.baseURL = "https://vigilant-adventure-9q9r79xq7wh759r-3000.app.github.dev/";
+axios.defaults.baseURL = "http://localhost:3000/";
 axios.defaults.timeout = 5000;
 axios.defaults.headers.common["Authorization"] = "Bearer token";
 axios.defaults.headers.common.Accept = "application/json";
