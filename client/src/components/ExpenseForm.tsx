@@ -33,6 +33,7 @@ function ExpenseForm(props: Props) {
     register,
     handleSubmit,
     setValue,
+    resetField,
     clearErrors,
     formState: { errors },
   } = useForm<ExpenseValidationSchema>({
@@ -44,7 +45,11 @@ function ExpenseForm(props: Props) {
     if (expense) {
       clearErrors();
       setValue("description", expense.description);
-      setValue("amount", expense.amount);
+      if (expense.amount) {
+        setValue("amount", expense.amount);
+      } else {
+        resetField("amount");
+      }
       setValue("category", expense.category);
     }
   }, [expense]);
@@ -59,8 +64,8 @@ function ExpenseForm(props: Props) {
       setExpense({
         id: -1,
         description: "",
-        amount: 0,
-        category: -1,
+        amount: undefined,
+        category: 0,
       } as Expense);
     }
   }, [props.expenseId]);

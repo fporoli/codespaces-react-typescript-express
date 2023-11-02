@@ -19,11 +19,11 @@ export function ExpenseList(props: Props) {
       <div>
         <table className="table table-bordered">
           <thead>
-            <tr>
+            <tr className="table-active">
               <td>Description</td>
               <td>Category</td>
               <td>Amount</td>
-              <td></td>
+              <td width="200"></td>
             </tr>
           </thead>
           <tbody>
@@ -55,7 +55,9 @@ export function ExpenseList(props: Props) {
             <tr className="table-warning">
               <td>Total</td>
               <td></td>
-              <td>$ {props.expenseList?.reduce((e, t) => t.amount + e, 0)}</td>
+              <td>
+                $ {props.expenseList?.reduce((e, t) => (t.amount ?? 0) + e, 0)}
+              </td>
               <td></td>
             </tr>
           </tfoot>
