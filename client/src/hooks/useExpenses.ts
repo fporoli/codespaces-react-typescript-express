@@ -4,11 +4,6 @@ import ExpenseService from "../services/ExpenseService";
 import { CanceledError } from "../services/ApiClient";
 import axios from "axios";
 
-interface FetchExpensesResponse {
-  count: number;
-  expenses: Expense[];
-}
-
 export function useExpenses() {
   const [expenses, setExpenses] = useState<Expense[]>();
   const [error, setError] = useState<string>("");
