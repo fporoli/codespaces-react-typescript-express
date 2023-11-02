@@ -4,6 +4,11 @@ import ExpenseService from "../services/ExpenseService";
 import { CanceledError } from "../services/ApiClient";
 import axios from "axios";
 
+interface FetchExpensesResponse {
+  count: number;
+  expenses: Expense[];
+}
+
 export function useExpenses() {
   const [expenses, setExpenses] = useState<Expense[]>();
   const [error, setError] = useState<string>("");
@@ -12,18 +17,17 @@ export function useExpenses() {
   useEffect(() => {
     setIsLoading(true);
     const { request, cancel } = ExpenseService.getAll<Expense>();
-    request
-      .then((exp) => {
-        setExpenses(exp.data);
-        setIsLoading(false);
-      })
+    request.then((exp) => {
+      setExpenses(exp.data);
+      setIsLoading(false);
+    })
       .catch((e) => {
         setIsLoading(false);
         if (e instanceof CanceledError) {
           console.log("Cancelled");
           return;
         } else if (axios.isAxiosError(e)) {
-          setError(e.status + ": " + e.message);
+          setError(e.status + ': ' + e.message);
         } else {
           setError(e.message);
         }
