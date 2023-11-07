@@ -3,10 +3,10 @@ import dotenv from "dotenv";
 import cors from "cors";
 import expRouter from './routes/expenseRoute';
 
+dotenv.config();
+
 const app: Express = express();
 const port = process.env.PORT || 10000;
-
-dotenv.config();
 
 app.use(cors());
 app.use(express.json());
